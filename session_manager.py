@@ -29,3 +29,16 @@ class SessionManager:
         """Ends the session and removes it from active sessions."""
         if session_id in self.active_sessions:
             del self.active_sessions[session_id]
+
+    @staticmethod
+    def generate_session_id(user_id):
+        """Generates a unique session ID."""
+        import hashlib
+        import time
+        return hashlib.sha256(f"{user_id}{time.time()}".encode()).hexdigest()
+
+    @staticmethod
+    def current_time():
+        """Returns the current time in seconds."""
+        import time
+        return int(time.time())
