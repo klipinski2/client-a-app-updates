@@ -42,3 +42,5 @@ class SessionManager:
         """Returns the current time in seconds."""
         import time
         return int(time.time())
+
+these are some example changes to the code.
